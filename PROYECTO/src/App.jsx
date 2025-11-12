@@ -94,12 +94,11 @@ function App() {
         <div className="container">
           <div className="logo">
             <h1 className="brand-title">PORTAL ROSA</h1>
-            <p className="brand-subtitle">Tu Empleo con Confianza y Crecimiento</p>
+            <p className="brand-subtitle">Tu Profesional de Confianza y Crecimiento</p>
           </div>
           <nav className="main-nav">
             <ul>
-              <li><a href="#empleos">Empleos</a></li>
-              <li><a href="#empresas">Empresas con Sello Aliada</a></li>
+              <li><a href="#empresas">Aliados</a></li>
               <li><a href="#resenas">Reseñas</a></li>
               <li><a href="#recursos">Recursos</a></li>
               <li><a href="#login" className="btn-login">Iniciar Sesión</a></li>
@@ -112,8 +111,9 @@ function App() {
       <section className="hero">
         <div className="container">
           <div className="hero-content">
-            <h2>Encuentra empresas que valoran el talento femenino</h2>
-            <p>No es solo una bolsa de trabajo, es un portal curado de empresas validadas como buenos lugares para que las mujeres trabajen.</p>
+            <h2>Encuentra talento femenino profesional</h2>
+            <p>No es una red social ni un portal de empleo: es un catálogo curado de profesionales validadas, 
+              donde empresas y reclutadores pueden encontrar perfiles femeninos calificados para sus vacantes.</p>
             <div className="search-box">
               <input type="text" placeholder="Buscar por cargo, área o empresa..." />
               <button className="btn-search">Buscar</button>
