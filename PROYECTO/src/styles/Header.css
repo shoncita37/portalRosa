@@ -1,0 +1,242 @@
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+
+.header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-medium-gray);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2xl);
+}
+
+/* Logo Section */
+.logo-section {
+  flex-shrink: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+/* StemFem Logo */
+.stemfem-logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--gradient-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.logo-atom {
+  width: 28px;
+  height: 28px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 8s linear infinite;
+}
+
+.logo-atom::before,
+.logo-atom::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-electric-blue);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo-atom::before {
+  left: -12px;
+}
+
+.logo-atom::after {
+  right: -12px;
+}
+
+.logo-text-f {
+  position: absolute;
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 20px;
+  font-family: var(--font-family);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logo-title {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.logo-subtitle {
+  font-size: 0.75rem;
+  color: var(--color-medium-gray);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Navigation */
+.header-nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+}
+
+.nav-link {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--color-dark-gray);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--color-purple);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+.header-actions .btn-secondary,
+.header-actions .btn-primary {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+@media (max-width: 1024px) {
+  .header-container {
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+  }
+  
+  .header-nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: space-around;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: var(--spacing-md);
+  }
+  
+  .header-nav {
+    gap: var(--spacing-lg);
+  }
+  
+  .nav-link {
+    font-size: var(--font-size-base);
+  }
+  
+  .logo-title {
+    font-size: 1.25rem;
+  }
+  
+  .header-actions {
+    gap: var(--spacing-sm);
+  }
+  
+  .header-actions button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-nav {
+    display: none;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .header-actions {
+    width: 100%;
+  }
+  
+  .header-actions button {
+    flex: 1;
+  }
+}

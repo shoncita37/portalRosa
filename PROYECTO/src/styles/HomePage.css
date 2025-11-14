@@ -1,0 +1,18 @@
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+.home-page {
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+/* General page layout */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+}
