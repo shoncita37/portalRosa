@@ -1,0 +1,1 @@
+DATABASE_URL="postgresql://postgres.abcd1234:superpass@aws-0-west.supabase.co/postgres"
