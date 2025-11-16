@@ -7,9 +7,22 @@ generator client {
   provider = "prisma-client-py"
 }
 
+model Role {
+  role_id   Int     @id @default(autoincrement())
+  role_name String  @db.VarChar(100)
+
+  // Relación 1:N con User
+  users     User[]
+}
+
 model User {
-  id        Int     @id @default(autoincrement())
-  name      String
-  email     String  @unique
-  createdAt DateTime @default(now())
+  id         String   @id @db.Uuid @default(dbgenerated("gen_random_uuid()"))
+  role_id    Int
+  email      String   @unique @db.VarChar(150)
+  hash_pw    String
+  created_at DateTime @default(dbgenerated("now()")) @db.Timestamptz(6)
+  updated_at DateTime @default(dbgenerated("now()")) @db.Timestamptz(6)
+
+  // Relación
+  role Role @relation(fields: [role_id], references: [role_id])
 }
